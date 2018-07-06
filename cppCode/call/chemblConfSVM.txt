@@ -1,0 +1,42 @@
+project="chembl20";
+trainInfo="train";
+clusterInfo="cl1";
+targetInfo="tocompute";
+mode=0;
+predSavename="svm";
+eps=0.001;
+shrinking=1;
+w1=1.;
+w2=1.;
+
+sfeatures=("ECFC6_ES", "DFS8_ES", "toxicophores", "semisparse");
+
+dfeatures=("dense");
+
+sfeatureKernels=(
+("featECFC6_ES", "ECFC6_ES", "TAN"),
+("featDFS8_ES", "DFS8_ES", "TAN"),
+("featTox", "toxicophores", "TAN"),
+("featSemi", "semisparse", "TAN")
+);
+
+dfeatureKernels=(
+("featDense", "dense", "TANS")
+);
+
+paramFeatures=(
+(0, ("featDense"), (), "TANCOMB", 0L, 0L),
+(0, (), ("featSemi"), "TANCOMB", 0L, 0L),
+(1, (), ("featECFC6_ES"), "TANCOMB", 0L, 0L),
+(0, (), ("featDFS8_ES"), "TANCOMB", 0L, 0L),
+(0, (), ("featTox", "featECFC6_ES"), "TANCOMB", 0L, 0L)
+);
+
+paramGTypes=[0L, 1L, 2L, 3L, 4L, 5L, 6L];
+
+defaultG=3L;
+  
+paramRBFTypes=[-1.0, 0.1, 1.0, 10.0, 100.0];
+
+defaultRBF=-1.0;
+

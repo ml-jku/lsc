@@ -1,0 +1,20 @@
+project="chembl20";
+trainInfo="train";
+clusterInfo="cl1";
+targetInfo="tocompute";
+mode=0;
+predSavename="sea";
+
+sfeatures=("ECFC6_ES", "DFS8_ES", "toxicophores", "semisparse");
+
+dfeatures=("dense");
+
+sfeatureKernels=(
+("featECFC6_ES", "ECFC6_ES", "TAN")
+);
+
+dfeatureKernels=();
+
+paramFeatures=(
+(1, (), ("featECFC6_ES"), "TANCOMB", 0L, 0L)
+);

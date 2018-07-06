@@ -1,0 +1,33 @@
+project="chembl20";
+trainInfo="train";
+clusterInfo="cl1";
+targetInfo="tocompute";
+mode=0;
+predSavename="knn";
+
+sfeatures=("ECFC6_ES", "DFS8_ES", "toxicophores", "semisparse");
+
+dfeatures=("dense");
+
+sfeatureKernels=(
+("featECFC6_ES", "ECFC6_ES", "TAN"),
+("featDFS8_ES", "DFS8_ES", "TAN"),
+("featTox", "toxicophores", "TAN"),
+("featSemi", "semisparse", "TAN")
+);
+
+dfeatureKernels=(
+("featDense", "dense", "TANS")
+);
+
+paramFeatures=(
+(0, ("featDense"), (), "TANCOMB", 0L, 0L),
+(0, (), ("featSemi"), "TANCOMB", 0L, 0L),
+(1, (), ("featECFC6_ES"), "TANCOMB", 0L, 0L),
+(0, (), ("featDFS8_ES"), "TANCOMB", 0L, 0L),
+(0, (), ("featTox", "featECFC6_ES"), "TANCOMB", 0L, 0L)
+);
+
+paramKNNTypes=[1L, 3L, 5L, 10L, 50L, 100L];
+
+defaultKNN=10L;
