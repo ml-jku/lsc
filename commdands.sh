@@ -29,8 +29,9 @@ wget http://www.bioinf.jku.at/research/lsc/training/tocompute.info --directory=$
 #####only for reproducibility of fingerprint features#####
 #If the following wgets do not work immediately, try to start it multiple times after each other
 
-wget https://sourceforge.net/code-snapshots/svn/j/jc/jcompoundmapper/code/jcompoundmapper-code-r55.zip --directory=$HOME/myprogs
-unzip $HOME/myprogs/jcompoundmapper-code-r55.zip -d $HOME/myprogs/
+#wget https://sourceforge.net/code-snapshots/svn/j/jc/jcompoundmapper/code/jcompoundmapper-code-r55.zip --directory=$HOME/myprogs
+#unzip $HOME/myprogs/jcompoundmapper-code-r55.zip -d $HOME/myprogs/
+svn export svn://svn.code.sf.net/p/jcompoundmapper/code/ $HOME/myprogs/jcompoundmapper-code-r55 -r 55
 sed -i "59isubstructureHash=false;" $HOME/myprogs/jcompoundmapper-code-r55/src/de/zbit/jcmapper/fingerprinters/topological/features/ECFPFeature.java
 sed -i "36inewHash=seed;" $HOME/myprogs/jcompoundmapper-code-r55/src/de/zbit/jcmapper/io/writer/ExporterHelper.java
 ant -buildfile $HOME/myprogs/jcompoundmapper-code-r55/build.xml all
