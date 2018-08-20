@@ -2,16 +2,22 @@
 **Large-scale comparison of machine learning methods for drug target prediction on ChEMBL**
 * [Link to Publication](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k#!divAbstract)
 * [Electronic Supplementary Information](http://www.rsc.org/suppdata/c8/sc/c8sc00148k/c8sc00148k1.pdf)
+
 <br>
 <br>
+
 **Additional Information** on dataset creation and code: http://ml.jku.at/research/lsc/index.html
+
 <br>
 <br>
+
 **Dataset Download**: http://ml.jku.at/research/lsc/mydata.html
 * maybe most interesting to you (in case you are working in Python) is the section `dataPythonReduced`
 * load `dataPythonReduced`-data into Python https://github.com/ml-jku/lsc/blob/master/pythonCode/apred/loadData.py
+
 <br>
 <br>
+
 **BibTeX:**
 
 >@Article{bib:Mayr2018,\
