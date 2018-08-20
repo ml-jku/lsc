@@ -1,5 +1,7 @@
 # lsc
-Large-scale comparison of machine learning methods for drug target prediction on ChEMBL
+**Large-scale comparison of machine learning methods for drug target prediction on ChEMBL** \
+[Link to Publication](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k#!divAbstract) \
+[Electronic Supplementary Information](http://www.rsc.org/suppdata/c8/sc/c8sc00148k/c8sc00148k1.pdf)
 
 
 **additional information** on dataset creation and code: http://ml.jku.at/research/lsc/index.html
