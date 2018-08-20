@@ -14,7 +14,7 @@
 **Dataset Download**: http://ml.jku.at/research/lsc/mydata.html
 * maybe most interesting to you (in case you are working in Python) is the section `dataPythonReduced`
 * load `dataPythonReduced`-data into Python https://github.com/ml-jku/lsc/blob/master/pythonCode/apred/loadData.py
-
+* data download script: https://github.com/ml-jku/lsc/blob/master/download.sh (maybe you need only parts out of it, but maybe simpler to use than downloading by browser)
 <br>
 <br>
 
