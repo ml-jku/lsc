@@ -2,7 +2,7 @@
 Large-scale comparison of machine learning methods for drug target prediction on ChEMBL
 
 
-**additional information** on the dataset: http://ml.jku.at/research/lsc/index.html
+**additional information** on dataset creation and code: http://ml.jku.at/research/lsc/index.html
 
 **dataset download**: http://ml.jku.at/research/lsc/mydata.html
 * maybe most interesting to you (in case you are working in Python) is the section `dataPythonReduced`
