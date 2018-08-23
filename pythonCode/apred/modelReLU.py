@@ -1,4 +1,4 @@
-#Copyright (C) 2018 Andreas Mayr
+#Copyright (C) 2018 Andreas Mayr 
 #Licensed under GNU General Public License v3.0 (see http://www.bioinf.jku.at/research/lsc/LICENSE and https://github.com/ml-jku/lsc/blob/master/LICENSE)
 
 def myReLUInit():
