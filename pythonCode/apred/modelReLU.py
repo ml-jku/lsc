@@ -117,7 +117,7 @@ with tf.variable_scope('layer_'+str(layernr)):
   if nrSparseFeatures>0.5:
     WlSparse=tf.get_variable("W"+str(layernr)+"_sparse", trainable=True, initializer=tf.random_uniform([nrSparseFeatures, layerSizes[layernr]], -np.sqrt(initScale/float(layerSizes[layernr-1])), np.sqrt(initScale/float(layerSizes[layernr-1]))))
     wList.append(WlSparse)
-    sparseMeanWSparse=tf.Variable(tf.zeros([1, layerSizes[layernr]]), dtype=tf.float32)
+    sparseMeanWSparse=tf.Variable(tf.zeros([1, layerSizes[layernr]]), trainable=False, dtype=tf.float32)
   bl=tf.get_variable('b'+str(layernr), shape=[layerSizes[layernr]], trainable=True, initializer=tf.zeros_initializer())
   
   regRaw=l2PenaltyBias*tf.nn.l2_loss(bl)+l1PenaltyBias*tf.reduce_sum(tf.abs(bl))
