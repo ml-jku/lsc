@@ -35,7 +35,7 @@ if nrSparseFeatures>0.5:
   xDim = tf.placeholder(tf.int64, [2])
   xSparseData=tf.SparseTensor(indices=xIndices, values=xValues, dense_shape=xDim)
   sparseMeanInit=tf.placeholder(tf.float32, [1, nrSparseFeatures])
-  sparseMean=tf.Variable(tf.zeros([1, nrSparseFeatures]), dtype=tf.float32)
+  sparseMean=tf.Variable(tf.zeros([1, nrSparseFeatures]), trainable=False, dtype=tf.float32)
   sh0=tf.shape(xSparseData)[0]
 
 
