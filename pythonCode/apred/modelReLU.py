@@ -117,7 +117,8 @@ with tf.variable_scope('layer_'+str(layernr)):
   if nrSparseFeatures>0.5:
     WlSparse=tf.get_variable("W"+str(layernr)+"_sparse", trainable=True, initializer=tf.random_uniform([nrSparseFeatures, layerSizes[layernr]], -np.sqrt(initScale/float(layerSizes[layernr-1])), np.sqrt(initScale/float(layerSizes[layernr-1]))))
     wList.append(WlSparse)
-    sparseMeanWSparse=tf.Variable(tf.zeros([1, layerSizes[layernr]]), trainable=False, dtype=tf.float32)
+    #sparseMeanWSparse=tf.Variable(tf.zeros([1, layerSizes[layernr]]), trainable=False, dtype=tf.float32)
+    sparseMeanWSparse=tf.matmul(sparseMean, WlSparse)
   bl=tf.get_variable('b'+str(layernr), shape=[layerSizes[layernr]], trainable=True, initializer=tf.zeros_initializer())
   
   regRaw=l2PenaltyBias*tf.nn.l2_loss(bl)+l1PenaltyBias*tf.reduce_sum(tf.abs(bl))
@@ -196,12 +197,14 @@ optimizerSparse=tf.train.MomentumOptimizer(momentum=mom, learning_rate=lrGeneral
 
 predNetwork=tf.nn.sigmoid(hiddenl)
 
-  
+class MyNoOp:
+  op=tf.no_op()  
 
 init=tf.global_variables_initializer()
 biasInitOp=biasTensors[-1].assign(biasInit)
 if nrSparseFeatures>0.5:
-  sparseMeanWSparseOp=sparseMeanWSparse.assign(tf.matmul(sparseMean, WlSparse))
+  #sparseMeanWSparseOp=sparseMeanWSparse.assign(tf.matmul(sparseMean, WlSparse))
+  sparseMeanWSparseOp=MyNoOp()
   sparseMeanInitOp=sparseMean.assign(sparseMeanInit)
 
 scaleTrain=[tf.assign(idTensors[i], idTensors[i]/(1.0-inputDropout)).op for i in range(0, len(idTensors))]+[tf.assign(hdTensors[i], hdTensors[i]/(1.0-hiddenDropout)).op for i in range(0, len(hdTensors))]
