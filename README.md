@@ -18,6 +18,10 @@
 <br>
 <br>
 
+**Update Feb 2020:**
+* Consider that the source codes are based on an older version of TF1.X and are not adapted to the eager execution mode of TF2.
+* A technical appendix and a partial reanalysis is available [here](http://www.bioinf.jku.at/research/lsc/report.pdf). To obtain these results, change normalizeLocalDense to True even for sparse features (since for simplicity reasons the matrix in the reference code is converted to a dense one)
+
 **BibTeX:**
 
 >@Article{bib:Mayr2018,\
