@@ -13,14 +13,27 @@ $HOME/mycode/cppCode/exec/install.sh
 wget ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_20/chembl_20.sdf.gz --directory=$HOME/mydata/raw/chembl20
 gunzip $HOME/mydata/raw/chembl20/chembl_20.sdf.gz
 wget http://www.bioinf.jku.at/research/lsc/training/SampleIdTable.txt --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/ECFC4.fpf --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/ECFC6_ES.fpf --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/DFS8_ES.fpf --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/dense.csv --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/semisparse.csv --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/compounds/toxicophores.csv --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/ECFC4.fpf.tar.gz --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/ECFC6_ES.fpf.tar.gz --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/DFS8_ES.fpf.tar.gz --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/dense.csv.tar.gz --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/semisparse.csv.tar.gz --directory=$HOME/mydata/raw/chembl20
+wget http://www.bioinf.jku.at/research/lsc/compoundsTarGz/toxicophores.csv.tar.gz --directory=$HOME/mydata/raw/chembl20
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/ECFC4.fpf.tar.gz
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/ECFC6_ES.fpf.tar.gz
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/DFS8_ES.fpf.tar.gz
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/dense.csv.tar.gz
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/semisparse.csv.tar.gz
+tar -C $HOME/mydata/raw/chembl20 -xzvf $HOME/mydata/raw/chembl20/toxicophores.csv.tar.gz
+#direct download of features (doesn't need unzip)
+#wget http://www.bioinf.jku.at/research/lsc/compounds/ECFC4.fpf --directory=$HOME/mydata/raw/chembl20
+#wget http://www.bioinf.jku.at/research/lsc/compounds/ECFC6_ES.fpf --directory=$HOME/mydata/raw/chembl20
+#wget http://www.bioinf.jku.at/research/lsc/compounds/DFS8_ES.fpf --directory=$HOME/mydata/raw/chembl20
+#wget http://www.bioinf.jku.at/research/lsc/compounds/dense.csv --directory=$HOME/mydata/raw/chembl20
+#wget http://www.bioinf.jku.at/research/lsc/compounds/semisparse.csv --directory=$HOME/mydata/raw/chembl20
+#wget http://www.bioinf.jku.at/research/lsc/compounds/toxicophores.csv --directory=$HOME/mydata/raw/chembl20
 wget http://www.bioinf.jku.at/research/lsc/training/cl1.info --directory=$HOME/mydata/raw/chembl20
-wget http://www.bioinf.jku.at/research/lsc/training/clusterMinFull.zip --directory=$HOME/mydata/raw/chembl20
+wget https://www.bioinf.jku.at/research/lsc/chembl20/chemFeatures/cl/clusterMinFull.zip --directory=$HOME/mydata/raw/chembl20
 wget http://www.bioinf.jku.at/research/lsc/training/train.info --directory=$HOME/mydata/raw/chembl20
 wget http://www.bioinf.jku.at/research/lsc/training/tocompute.info --directory=$HOME/mydata/raw/chembl20
 
